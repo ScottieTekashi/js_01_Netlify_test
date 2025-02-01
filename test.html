@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>childNodes Example</title>
+</head>
+<body>
+
+    <div id="example">
+        <p><strong>段落一</strong></p>
+        <p>段落二</p>
+    </div>
+
+    <!-- 新增 ul 元素 -->
+    <ul id="list"></ul>
+
+    <script>
+        // 使用 childNodes 獲取所有子節點
+        const childNodes = document.getElementById('example').childNodes;
+        console.log(childNodes); // NodeList(5) [text, p, text, p, text]
+
+        // 遍歷並顯示每個子節點的內容
+        childNodes.forEach(node => {
+            if (node.nodeType === 1) { // 節點類型 1 表示元素節點
+                console.log(node.innerText); // 只顯示段落內容
+            }
+        });
+
+        // 找到 ul 元素
+        const ul = document.querySelector('#list'); // 確保選擇正確的 ul 元素
+        const li = document.createElement('li'); // 創建一個新的 li 元素
+        ul.append(li); // 把 li 加到 ul 裡
+        li.innerText = 'dwedew'; // 設置 li 內容
+        li.setAttribute('id','example')
+    </script>
+
+</body>
+</html>

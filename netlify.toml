@@ -1,0 +1,9 @@
+[build]
+  command = ""  # 沒有 build 指令，保持空白
+  publish = "."  # 直接將根目錄作為佈署目錄
+
+# 讓所有請求指向 index-FINISHED.html 作為預設入口（若需要）
+[[redirects]]
+  from = "/*"
+  to = "/index-FINISHED.html"
+  status = 200
